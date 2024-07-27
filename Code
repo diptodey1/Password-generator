@@ -1,0 +1,19 @@
+import random
+import string
+
+def password(l):
+    characters = string.ascii_lowercase + string.digits
+    psd = [random.choice(characters) for _ in range(l)]
+    psd = ''.join(psd)
+    return psd
+
+while True:
+    l = input("Enter the desired length of the password (minimum 8 characters): ")
+    if not l.isdigit() or int(l) < 8:
+         print("Password desired length must be at least 8 characters. Please enter appropriate length")
+    else:
+        l = int(l)
+        break
+
+pas = password(l)
+print("Your generated password is:", pas)
